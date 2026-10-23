@@ -1,0 +1,28 @@
+server:
+  port: 8080
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+
+spring:
+  application:
+    name: RagAgent
+  elasticsearch:
+    uris: ${ELASTICSEARCH_URIS:http://localhost:9200}
+  ai:
+    dashscope:
+      api-key: sk-ws-H.PPYHHIE.aw6o.MEUCICixyuyVVVyaoJC_nb5GJtxrEXd_uVvFktbAfHUKgOC7AiEAvDQltM5j1cTLXIBQFHIPFYXwysGXP8vxKwTT-FQlynU
+      chat:
+        options:
+          model: qwen-plus-latest
+      embedding:
+        options:
+          model: qwen3.7-text-embedding-flash
+      rerank:
+        options:
+          model: qwen3.7-text-rerank
+
+logging:
+  level:
+    com.study.rag: INFO
